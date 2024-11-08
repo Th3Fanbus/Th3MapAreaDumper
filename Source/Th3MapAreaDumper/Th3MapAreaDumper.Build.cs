@@ -1,47 +1,25 @@
 /* SPDX-License-Identifier: MPL-2.0 */
 
 using UnrealBuildTool;
-using System.IO;
-using System;
 
 public class Th3MapAreaDumper : ModuleRules
 {
 	public Th3MapAreaDumper(ReadOnlyTargetRules Target) : base(Target)
-	{
-		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
-		bUseUnity = false;
+    {
+        DefaultBuildSettings = BuildSettingsVersion.Latest;
+        ShadowVariableWarningLevel = WarningLevel.Error;
+        PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
+        bLegacyParentIncludePaths = false;
+        CppStandard = CppStandardVersion.Cpp20;
+        bUseUnity = false;
 
-		PublicDependencyModuleNames.AddRange(new string[] {
-			"Core", "CoreUObject",
-			"Engine",
-			"DeveloperSettings",
-			"PhysicsCore",
-			"InputCore",
-			//"OnlineSubsystem", "OnlineSubsystemUtils", "OnlineSubsystemNull",
-			//"SignificanceManager",
-			"GeometryCollectionEngine",
-			//"ChaosVehiclesCore", "ChaosVehicles", "ChaosSolverEngine",
-			"AnimGraphRuntime",
-			//"AkAudio",
-			"AssetRegistry",
-			"NavigationSystem",
-			//"ReplicationGraph",
-			"AIModule",
-			"GameplayTasks",
-			"SlateCore", "Slate", "UMG",
-			//"InstancedSplines",
-			"RenderCore",
-			"CinematicCamera",
-			"Foliage",
-			//"Niagara",
-			//"EnhancedInput",
-			//"GameplayCameras",
-			//"TemplateSequence",
-			"NetCore",
-			"GameplayTags",
-			"Json", "JsonUtilities",
-			"DummyHeaders",
-			"FactoryGame", "SML"
-		});
-	}
+        PublicDependencyModuleNames.AddRange(new string[] {
+            "Core", "CoreUObject", "Engine",
+            "DeveloperSettings", "PhysicsCore", "InputCore",
+            "AssetRegistry", "RenderCore", "RHI",
+            "SlateCore", "Slate", "UMG", "GameplayTags",
+            "Json", "JsonUtilities",
+            "DummyHeaders", "FactoryGame", "SML",
+        });
+    }
 }
